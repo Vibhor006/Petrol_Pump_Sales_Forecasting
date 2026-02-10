@@ -1,11 +1,13 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # -------------------------------
 # 1. Load Dataset
 # -------------------------------
-df = pd.read_csv("weekly_fuel_prices_030225.csv")
+df = pd.read_csv("../data/weekly_fuel_prices_030225.csv")
+
 
 # -------------------------------
 # 2. Convert Date & Sort
@@ -93,7 +95,7 @@ plt.plot(df['Date'], df['Petrol_Sales_Liters'], label='Petrol')
 plt.plot(df['Date'], df['Diesel_Sales_Liters'], label='Diesel')
 plt.title("Petrol vs Diesel Sales")
 plt.xlabel("Date")
-plt.ylabel("Sales")
+plt.ylabel("Sales (Liters)")
 plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()
@@ -114,8 +116,42 @@ print(df[['Petrol_Price','Petrol_Sales_Liters',
 # -------------------------------
 # 10. Export Final Dataset
 # -------------------------------
-df.to_csv("petrol_business_dataset.csv", index=False)
+df.to_csv("../data/petrol_business_dataset.csv", index=False)
+
 print("\nFinal dataset saved as petrol_business_dataset.csv")
-import os
 print("Saved in:", os.getcwd())
 
+# -------------------------------
+# 11. Interactive Price Simulation
+# -------------------------------
+
+print("\n--- Petrol Pump Price Simulation Tool ---")
+
+try:
+    new_petrol_price = float(input("Enter expected Petrol Price: "))
+    new_diesel_price = float(input("Enter expected Diesel Price: "))
+
+    # Predict sales using demand model
+    predicted_petrol_sales = 15000 - (new_petrol_price * 20)
+    predicted_diesel_sales = 12000 - (new_diesel_price * 15)
+
+    predicted_petrol_sales = max(predicted_petrol_sales, 5000)
+    predicted_diesel_sales = max(predicted_diesel_sales, 4000)
+
+    # Revenue
+    predicted_petrol_revenue = predicted_petrol_sales * new_petrol_price
+    predicted_diesel_revenue = predicted_diesel_sales * new_diesel_price
+    predicted_total_revenue = predicted_petrol_revenue + predicted_diesel_revenue
+
+    # Cost & Profit
+    predicted_operating_cost = 300000 + (predicted_total_revenue * 0.05)
+    predicted_profit = predicted_total_revenue - predicted_operating_cost
+
+    print("\n--- Simulation Result ---")
+    print(f"Predicted Petrol Sales: {predicted_petrol_sales:.2f} liters")
+    print(f"Predicted Diesel Sales: {predicted_diesel_sales:.2f} liters")
+    print(f"Estimated Total Revenue: ₹{predicted_total_revenue:,.2f}")
+    print(f"Estimated Profit: ₹{predicted_profit:,.2f}")
+
+except ValueError:
+    print("Invalid input. Please enter numeric values only.")
