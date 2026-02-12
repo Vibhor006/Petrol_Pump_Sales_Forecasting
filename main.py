@@ -14,7 +14,6 @@ print("Sales & Profit Generated")
 # 3️⃣ AI Insights
 print("\nAI Business Insights:")
 insights = generate_business_insights(df)
-
 for insight in insights:
     print("-", insight)
 

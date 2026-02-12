@@ -1,125 +1,85 @@
-🚀 Petrol Pump Sales Forecasting & Revenue Analysis
-📌 Project Overview
+Project Overview
 
-This project analyzes weekly fuel price data to simulate petrol pump sales, revenue, and profit trends. Using Python for data preprocessing and business modeling, and Tableau for visualization, the project demonstrates an end-to-end data analytics workflow.
+This project is an end-to-end data analytics and forecasting system designed to simulate and forecast petrol pump sales and profit.
 
-The objective is to understand how fuel price fluctuations impact fuel demand and overall business profitability.
+It transforms raw fuel price data into business insights, revenue analysis, and profit forecasting using Python and machine learning techniques.
 
-🎯 Problem Statement
+The project demonstrates:
 
-Fuel prices fluctuate weekly due to market conditions, taxes, and global oil trends. Petrol pump businesses must understand:
+Data cleaning & preprocessing
 
-How price changes affect sales volume
+Feature engineering
 
-Revenue and profit behavior over time
+Revenue & profit modeling
 
-The relationship between fuel price and customer demand
+Business insight generation
 
-This project models and visualizes these business dynamics.
+Forecasting logic
 
-🛠️ Tools & Technologies Used
+Modular project architecture
+
+🎯 Business Objective
+
+Petrol pump owners need to understand:
+
+How fuel prices impact sales
+
+Revenue trends over time
+
+Profit fluctuations
+
+Future expected profit
+
+This system simulates real-world demand behavior and provides actionable business insights.
+
+⚙️ Technologies Used
 
 Python
 
-Pandas – Data cleaning & transformation
+Pandas
 
-NumPy – Synthetic demand modeling
+NumPy
 
-Matplotlib – Data visualization
+Matplotlib
 
-Tableau Public – Interactive dashboard creation
+Scikit-Learn
 
-Git & GitHub – Version control and project hosting
+XGBoost
 
-📂 Dataset
+Streamlit (for dashboard)
 
-Weekly fuel price dataset
+Git & GitHub
+ey Features
+✅ Data Cleaning & Processing
 
-Missing values handled using forward filling
+Date conversion
 
-Date formatting and sorting applied
+Missing value handling
 
-Cleaned column naming for better analysis
+Column normalization
 
-Synthetic sales data was generated using a price-demand elasticity assumption to simulate real-world petrol pump operations.
+Feature transformation
 
-📊 Key Features
+✅ Synthetic Demand Modeling
 
-✔ Data preprocessing & cleaning
-✔ Handling missing values
-✔ Feature engineering (Sales, Revenue, Profit)
-✔ Synthetic demand modeling
-✔ Revenue & profit calculations
-✔ Correlation analysis between price and sales
-✔ Time-series visualization
-✔ Interactive Tableau dashboard
+Price elasticity-based sales simulation
 
-📈 Business Metrics Created
+Revenue computation
 
-Petrol Sales (Liters)
+Operating cost modeling
 
-Diesel Sales (Liters)
+Profit calculation
 
-Petrol Revenue
+✅ Business Insights
 
-Diesel Revenue
+Revenue trend detection
 
-Total Revenue
+Profit pattern analysis
 
-Operating Cost
+Sales comparison (Petrol vs Diesel)
 
-Profit
+✅ Forecasting
 
-🔍 Key Insights
+12-week profit projection
 
-Fuel demand fluctuates with weekly price changes
-
-Petrol contributes higher revenue compared to diesel
-
-Profit margins vary depending on price-demand interaction
-
-Negative correlation observed between fuel price and sales volume
-
-📊 Dashboard
-
-An interactive Tableau dashboard was built to visualize:
-
-Revenue trend over time
-
-Profit trend
-
-Petrol vs Diesel demand comparison
-
-Price vs Sales relationship
-
-🚀 Project Workflow
-
-Load raw dataset
-
-Clean and preprocess data
-
-Generate synthetic sales using demand model
-
-Calculate revenue and profit
-
-Perform correlation analysis
-
-Export final dataset
-
-Build interactive dashboard in Tableau
-
-💼 Skills Demonstrated
-
-Data Cleaning & Preprocessing
-
-Feature Engineering
-
-Business Metric Modeling
-
-Time-Series Analysis
-
-Data Visualization
-
-Dashboard Design
-
-End-to-End Data Analytics Workflow
+Model-ready architecture for ML upgrades
