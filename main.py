@@ -5,7 +5,6 @@ from src.forecasting import forecast_profit
 
 # 1️⃣ Load Data
 df = load_and_prepare_data("data/weekly_fuel_prices_030225.csv")
-
 print("\nData Loaded & Cleaned Successfully")
 
 # 2️⃣ Generate Sales & Profit
