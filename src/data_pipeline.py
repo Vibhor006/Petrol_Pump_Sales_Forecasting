@@ -14,10 +14,9 @@ def load_and_prepare_data(file_path):
     df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
     df = df.sort_values('Date')
 
-    # 3. Handle Missing Values
+    
     df = df.ffill()
 
-    # 4. Clean Column Names
     df.columns = (
         df.columns
         .str.replace(":", "", regex=False)
@@ -28,7 +27,7 @@ def load_and_prepare_data(file_path):
         .str.replace(" ", "_", regex=False)
     )
 
-    # 5. Rename Important Columns
+   
     df = df.rename(columns={
         '_ULSP__Pump_price_p_litre': 'Petrol_Price',
         'ULSD_Pump_price_p_litre': 'Diesel_Price'
